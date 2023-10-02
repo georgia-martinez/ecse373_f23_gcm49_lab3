@@ -5,7 +5,7 @@
     <param if="$(arg use_sim_time)" name="use_sim_time" type="bool" value="true" />
 
     <include file="$(find navvis_description)/launch/display.launch">
-        <arg name="rviz_config" default="$(find ros_bag)/config/updated2.rviz"/>
+        <arg name="rviz_config" default="$(find ros_bag)/config/scans_and_map.rviz"/>
         <arg name="file" value="$(find ros_bag)/urdf/robot_lab3.xacro"/>
         <arg name="use_xacro" default="true"/>
         <arg name="use_robot_state_publisher" value="true" />
