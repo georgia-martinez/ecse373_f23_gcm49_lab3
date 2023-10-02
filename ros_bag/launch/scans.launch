@@ -5,7 +5,7 @@
     <param if="$(arg use_sim_time)" name="use_sim_time" type="bool" value="true" />
 
     <include file="$(find navvis_description)/launch/display.launch">
-        <arg name="rviz_config" default="$(find ros_bag)/config/scans.rviz"/>
+        <arg name="rviz_config_file" default="$(find ros_bag)/config/scans.rviz"/>
         <arg name="file" value="$(find ros_bag)/urdf/robot_lab3.xacro"/>
         <arg name="use_xacro" default="true"/>
         <arg name="use_robot_state_publisher" value="true" />
@@ -15,5 +15,5 @@
     <arg name="map_file" default="$(find maps_glennan)/maps/glennan5_map.yaml" />
     <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" />
 
-    <node pkg="rosbag" type="play" name="bag_player" args="--clock $(bag_file) /tf_trajectory:=/tf"></node>
+    <node pkg="rosbag" type="play" name="bag_player" args="--clock $(arg bag_file) /tf_trajectory:=/tf"></node>
 </launch>
