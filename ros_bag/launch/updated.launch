@@ -6,7 +6,7 @@
 
     <include file="$(find navvis_description)/launch/display.launch">
         <arg name="rviz_config" default="$(find ros_bag)/config/updated.rviz"/>
-        <arg name="file" value="$(find ros_bag)/urdf/robot_imu.xacro"/>
+        <arg name="file" value="$(find ros_bag)/urdf/robot_lab3.xacro"/>
         <arg name="use_xacro" default="true"/>
         <arg name="use_robot_state_publisher" value="true" />
         <arg name="use_joint_state_publisher_gui" value="false" />
