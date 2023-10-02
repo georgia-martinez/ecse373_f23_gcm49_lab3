@@ -1,0 +1,16 @@
+<launch>
+    <arg name="bag_file" default="glennan_5_complete.bag"/>
+
+    <arg name="use_sim_time" default="true" />
+    <param if="$(arg use_sim_time)" name="use_sim_time" type="bool" value="true" />
+
+    <include file="$(find navvis_description)/launch/display.launch">
+        <arg name="rviz_config" default="$(find ros_bag)/config/updated.rviz"/>
+        <arg name="file" value="$(find ros_bag)/urdf/robot_imu.xacro"/>
+        <arg name="use_xacro" default="true"/>
+        <arg name="use_robot_state_publisher" value="true" />
+        <arg name="use_joint_state_publisher_gui" value="false" />
+    </include>
+    
+    <node pkg="rosbag" type="play" name="bag_player" args="--clock $(bag_file) /tf_trajectory:=/tf"></node>
+</launch>
