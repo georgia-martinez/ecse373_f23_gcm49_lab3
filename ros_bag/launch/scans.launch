@@ -11,8 +11,6 @@
         <arg name="use_robot_state_publisher" value="true" />
         <arg name="use_joint_state_publisher_gui" value="false" />
     </include>
-    
-    <include file="$(find maps_glennan)/launch/glennan5_map.launch"/>
 
     <node pkg="rosbag" type="play" name="bag_player" args="--clock $(find ros_bag)/$(arg bag_file) /tf_trajectory:=/tf"></node>
 </launch>

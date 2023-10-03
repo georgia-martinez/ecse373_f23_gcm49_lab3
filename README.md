@@ -3,7 +3,6 @@
 Params:
 - `use_sim_time`: If true, ROS uses the simulation time from the simulation environment. If false, ROS uses the system's wall clock time.
 - `bag_file`: Path to the bag file to use 
-- `map_file`: Path to the map file to use 
 
 Original robot config:
 
